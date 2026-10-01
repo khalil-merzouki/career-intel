@@ -3,6 +3,11 @@ import { Link } from '@tanstack/react-router'
 import { ArrowRight, Layers3 } from 'lucide-react'
 
 const links = [
+  {
+    label: 'Job opportunities',
+    path: '/jobs',
+    note: 'Capture and review target roles',
+  },
   { label: 'Profile preview', path: '/profile', note: 'The main profile page' },
   {
     label: 'Start onboarding',

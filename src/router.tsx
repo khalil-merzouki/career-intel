@@ -16,6 +16,9 @@ import { QualificationsView } from './modules/profile/view/Qualifications'
 import { PreferencesView } from './modules/profile/view/Preferences'
 import { FinalReviewView } from './modules/profile/view/FinalReview'
 import { EditView } from './modules/profile/view/Edit'
+import { JobOpportunitiesView } from './modules/job-opportunities/view/Index'
+import { JobCaptureView } from './modules/job-opportunities/view/Capture'
+import { JobReviewView } from './modules/job-opportunities/view/Review'
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -37,6 +40,9 @@ const routes = [
   ['/profile/preferences', PreferencesView],
   ['/profile/setup/review', FinalReviewView],
   ['/profile/edit', EditView],
+  ['/jobs', JobOpportunitiesView],
+  ['/jobs/new', JobCaptureView],
+  ['/jobs/$jobId/review', JobReviewView],
 ] as const
 
 const routeTree = rootRoute.addChildren(

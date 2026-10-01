@@ -1,6 +1,12 @@
 # Career Intel
 
-A Vite and React application organised as a modular monolith. Each functional area owns its views, types, and API client under `src/modules`. The root router maps URLs to module views, and the root page links to every view for review.
+A Vite and React application organised as a modular monolith. Each functional area owns its views, types, API client, and MSW handlers under `src/modules`. The root router maps URLs to module views. Components used across modules live under `src/shared`.
+
+## Job Opportunities module
+
+`src/modules/job-opportunities` contains the opportunity list, job capture, and requirement review views. Users paste a description and optional URL, then review and edit the extracted details and criteria before confirming. Original descriptions and confirmed opportunities persist in browser local storage through MSW. The mock extraction uses keyword and phrase rules; its salary range suggestions are illustrative and marked as estimates. A backend can replace these handlers through the module API client.
+
+Reusable page shell, form field, aside illustration, and review components are in `src/shared/components` and are also used by Profile.
 
 ## Current module: Profile
 
