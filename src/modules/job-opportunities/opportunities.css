@@ -3,6 +3,7 @@
 .job-list-actions {
   display: flex;
   justify-content: flex-end;
+  gap: 10px;
   margin: -20px 0 24px;
 }
 .job-empty-state {
@@ -218,7 +219,7 @@
 }
 @media (max-width: 700px) {
   .job-list-actions {
-    justify-content: stretch;
+    flex-direction: column;
     margin: -10px 0 20px;
   }
   .job-list-actions .button {

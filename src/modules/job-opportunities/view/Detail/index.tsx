@@ -6,6 +6,7 @@ import {
   ArrowUpRight,
   BookmarkCheck,
   Check,
+  ClipboardList,
   Pencil,
   RotateCcw,
   Save,
@@ -129,6 +130,13 @@ export function JobDetailView() {
                 >
                   <Pencil size={16} /> Edit analysis
                 </Link>
+                <Link
+                  to="/applications/new/$jobId"
+                  params={{ jobId: opportunity.id }}
+                  className="button button-quiet"
+                >
+                  <ClipboardList size={16} /> Track application
+                </Link>
                 {job.canApply ? (
                   <a
                     className="button button-primary"
@@ -181,15 +189,6 @@ export function JobDetailView() {
                       ? 'Archived'
                       : 'Saved'}
                 </span>
-                {opportunity.trackingStatus === 'saved' && (
-                  <button
-                    type="button"
-                    onClick={() => void job.setTrackingStatus('applied')}
-                    disabled={job.busy}
-                  >
-                    Mark as applied after you submit <ArrowRight size={14} />
-                  </button>
-                )}
               </div>
             </section>
 

@@ -4,13 +4,17 @@ A Vite and React application organised as a modular monolith. Each functional ar
 
 ## Job Opportunities module
 
-`src/modules/job-opportunities` contains the opportunity list, job capture, requirement review, and opportunity detail views. Users paste a description and optional URL, then review and edit the extracted details and criteria before confirming. The detail view keeps the original description, confirmed requirements, profile match analysis, notes, and application tracking together. Notes and tracking status persist through MSW. Apply opens the original posting; users mark the role as applied after submitting. Archived roles can be restored.
+`src/modules/job-opportunities` contains the opportunity list, job capture, requirement review, and opportunity detail views. Users paste a description and optional URL, then review and edit the extracted details and criteria before confirming. The detail view keeps the original description, confirmed requirements, profile match analysis, and notes together. Apply opens the original posting; users can then create an application record to track their progress. Archived roles can be restored.
 
 `GET /api/jobs/:jobId/match` compares a confirmed opportunity with the saved Career Profile. Findings include the confirmed job criterion and the matching profile entry, or clearly say when profile evidence is absent. Experience duration counts overlapping dated roles once. Work authorization and other constraints remain for user review when preferences cannot prove eligibility. The mock extraction and comparison use deterministic rules, and salary suggestions are illustrative estimates. A backend can replace these handlers through the module API client.
 
 Reusable page shell, form field, aside illustration, and review components are in `src/shared/components` and are also used by Profile.
 
-## Current module: Profile
+## Applications module
+
+`src/modules/applications` contains an active and closed application overview, opportunity conversion, and application detail. Each application links to one saved opportunity and has a stage, application date, progress history, important dates, interview records, and notes. Stage changes add a dated history entry. Applications are stored by MSW in browser local storage and can be updated through `/api/applications` endpoints. The related job analysis stays available from the application detail page.
+
+## Profile module
 
 `src/modules/profile` follows the feature module layout in `agents.md`:
 
@@ -34,4 +38,4 @@ npm install
 npm run dev
 ```
 
-Open the local URL and use the root page to explore the Profile views. Run `npm run build` and `npm run lint` to check the app.
+Open the local URL and use the root page to explore the modules. Run `npm run build` and `npm run lint` to check the app.

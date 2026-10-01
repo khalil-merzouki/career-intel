@@ -4,6 +4,11 @@ import { ArrowRight, Layers3 } from 'lucide-react'
 
 const links = [
   {
+    label: 'Applications',
+    path: '/applications',
+    note: 'Track stages, interviews, dates, and notes',
+  },
+  {
     label: 'Job opportunities',
     path: '/jobs',
     note: 'Capture and review target roles',
@@ -60,10 +65,10 @@ export function RootPage() {
           <Layers3 size={27} />
         </span>
         <p className="eyebrow">CAREER INTEL · MODULES</p>
-        <h1>Explore the Profile module</h1>
+        <h1>Explore Career Intel</h1>
         <p className="lead">
-          These links expose each Profile view for review while the rest of the
-          product is built module by module.
+          Explore your profile, saved opportunities, and applications as the
+          product grows module by module.
         </p>
       </div>
       <div className="root-links">
