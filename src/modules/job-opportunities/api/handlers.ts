@@ -298,6 +298,18 @@ function getMockOpportunity(id: string) {
   return opportunities.find((item) => item.id === id)
 }
 
+export function getApplicationSource(id: string) {
+  return getMockOpportunity(id)
+}
+
+export function markOpportunityApplied(id: string) {
+  const index = opportunities.findIndex((item) => item.id === id)
+  if (index < 0) return
+  const next = [...opportunities]
+  next[index] = { ...next[index], trackingStatus: 'applied' }
+  storeOpportunities(next)
+}
+
 export function createJobMatchHandlers(getProfile: () => Profile) {
   return [
     http.get('/api/jobs/:jobId/match', ({ params }) => {

@@ -23,6 +23,9 @@ export function JobOpportunitiesView() {
       }
     >
       <div className="job-list-actions">
+        <Link to="/applications" className="button button-quiet">
+          View applications
+        </Link>
         <Link to="/jobs/new" className="button button-primary">
           <Plus size={18} /> Add job opportunity
         </Link>

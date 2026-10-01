@@ -1,0 +1,313 @@
+@import '../../shared/components/styles.css';
+
+.applications-top-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: -18px 0 23px;
+}
+.application-tabs {
+  display: inline-flex;
+  gap: 6px;
+  border: 1px solid var(--palette-e1e3e9);
+  border-radius: 11px;
+  padding: 5px;
+  background: var(--palette-fffefa);
+  margin-bottom: 26px;
+}
+.application-tabs button {
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--palette-4c5876);
+  padding: 10px 16px;
+  font-weight: 800;
+}
+.application-tabs button.selected {
+  background: var(--palette-e7f2eb);
+  color: var(--palette-11543d);
+}
+.application-tabs span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--palette-f0f1f3);
+  font-size: 0.72rem;
+  margin-left: 5px;
+}
+.application-tabs button.selected span {
+  background: var(--palette-fffefa);
+}
+.application-empty {
+  text-align: center;
+  padding: 43px 24px;
+}
+.application-empty h2 {
+  margin: 12px 0 6px;
+}
+.application-empty p {
+  color: var(--palette-66708a);
+  max-width: 440px;
+  margin: 0 auto 22px;
+}
+.application-empty .button {
+  margin: 0 auto;
+}
+.job-empty-icon,
+.application-source-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: var(--palette-e7f2eb);
+  color: var(--palette-1d7656);
+}
+.job-loading {
+  padding: 24px 0;
+  color: var(--palette-66708a);
+}
+.application-stage-list {
+  display: grid;
+  gap: 27px;
+}
+.application-stage-section > h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.04rem;
+  margin-bottom: 12px;
+}
+.application-stage-section > h2 span {
+  background: var(--palette-edf3d8);
+  border-radius: 99px;
+  padding: 3px 8px;
+  font-size: 0.74rem;
+}
+.application-cards {
+  display: grid;
+  gap: 10px;
+}
+.application-card {
+  border: 1px solid var(--palette-e1e3e9);
+  border-radius: 13px;
+  background: var(--palette-fffefa);
+  padding: 19px 21px 12px;
+}
+.application-card-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.application-card h3 {
+  font-size: 1.03rem;
+  margin: 0 0 4px;
+}
+.application-card p {
+  color: var(--palette-66708a);
+  font-size: 0.85rem;
+  margin: 0;
+}
+.application-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  color: var(--palette-4c5876);
+  font-size: 0.79rem;
+  margin-top: 14px;
+}
+.application-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.application-card .edit-link {
+  margin: 10px 0 0 -8px;
+}
+.application-stage {
+  display: inline-flex;
+  border-radius: 99px;
+  background: var(--palette-e7f2eb);
+  color: var(--palette-11543d);
+  padding: 6px 10px;
+  font-size: 0.73rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.application-stage.stage-offer,
+.application-stage.stage-accepted {
+  background: var(--palette-edf3d8);
+}
+.application-stage.stage-rejected,
+.application-stage.stage-withdrawn {
+  background: var(--palette-f0f1f3);
+  color: var(--palette-4c5876);
+}
+.application-convert-source {
+  padding-top: 28px;
+}
+.application-convert-source .detail-kicker {
+  margin-top: 17px;
+}
+.application-convert-source h2 {
+  font-size: 1.4rem;
+}
+.application-convert-source p:not(.detail-kicker) {
+  color: var(--palette-66708a);
+  margin: 0;
+}
+.application-convert-source .edit-link {
+  margin: 12px 0 0 -8px;
+}
+.detail-kicker {
+  color: var(--palette-6f9634);
+  font-size: 0.71rem;
+  letter-spacing: 0.13em;
+  font-weight: 800;
+  margin: 0 0 5px;
+}
+.application-existing {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: var(--palette-f1f8f3);
+}
+.application-existing > svg {
+  color: var(--palette-176b4e);
+  flex: 0 0 auto;
+}
+.application-existing p,
+.application-helper,
+.application-section-copy,
+.application-empty-copy {
+  color: var(--palette-66708a);
+  font-size: 0.85rem;
+}
+.application-existing .button {
+  margin-top: 8px;
+}
+.application-date-field {
+  max-width: 320px;
+}
+.application-helper {
+  margin: 15px 0 0;
+}
+.application-detail-stack .form-panel {
+  scroll-margin-top: 24px;
+}
+.application-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 19px;
+}
+.application-panel-header h2 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+.application-panel-header > svg {
+  color: var(--palette-1d7656);
+}
+.application-section-copy {
+  margin: -8px 0 20px;
+}
+.application-basic-fields {
+  max-width: 720px;
+}
+.application-progress-history {
+  border-top: 1px solid var(--palette-e8e9ee);
+  margin-top: 23px;
+  padding-top: 17px;
+}
+.application-progress-history h3 {
+  margin-bottom: 13px;
+}
+.application-progress-history ol {
+  display: grid;
+  gap: 9px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.application-progress-history li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font-size: 0.83rem;
+}
+.application-progress-history li span {
+  color: var(--palette-66708a);
+  min-width: 80px;
+}
+.application-entry-list {
+  display: grid;
+  gap: 15px;
+}
+.application-entry {
+  border-top: 1px solid var(--palette-e8e9ee);
+  padding-top: 15px;
+}
+.application-entry-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.application-entry-heading strong {
+  font-size: 0.86rem;
+}
+.application-entry-heading .icon-button {
+  color: var(--palette-66708a);
+}
+.application-entry .form-grid {
+  gap: 13px 16px;
+}
+.application-wide-field {
+  grid-column: 1 / -1;
+}
+.application-add {
+  margin-top: 17px;
+}
+.application-empty-copy {
+  margin: 0;
+}
+.application-related p {
+  color: var(--palette-66708a);
+  font-size: 0.89rem;
+}
+.detail-toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--palette-11543d);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .applications-top-actions {
+    justify-content: stretch;
+    margin: -12px 0 20px;
+  }
+  .applications-top-actions .button {
+    width: 100%;
+  }
+  .application-tabs {
+    display: flex;
+  }
+  .application-tabs button {
+    flex: 1;
+  }
+  .application-card-main {
+    flex-direction: column;
+  }
+  .application-card {
+    padding: 17px;
+  }
+  .application-existing {
+    flex-direction: column;
+  }
+}

@@ -20,6 +20,9 @@ import { JobOpportunitiesView } from './modules/job-opportunities/view/Index'
 import { JobCaptureView } from './modules/job-opportunities/view/Capture'
 import { JobReviewView } from './modules/job-opportunities/view/Review'
 import { JobDetailView } from './modules/job-opportunities/view/Detail'
+import { ApplicationsView } from './modules/applications/view/Index'
+import { ConvertApplicationView } from './modules/applications/view/Convert'
+import { ApplicationDetailView } from './modules/applications/view/Detail'
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -45,6 +48,9 @@ const routes = [
   ['/jobs/new', JobCaptureView],
   ['/jobs/$jobId', JobDetailView],
   ['/jobs/$jobId/review', JobReviewView],
+  ['/applications', ApplicationsView],
+  ['/applications/new/$jobId', ConvertApplicationView],
+  ['/applications/$applicationId', ApplicationDetailView],
 ] as const
 
 const routeTree = rootRoute.addChildren(
