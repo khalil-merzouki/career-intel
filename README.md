@@ -2,6 +2,10 @@
 
 A Vite and React application organised as a modular monolith. Each functional area owns its views, types, API client, and MSW handlers under `src/modules`. The root router maps URLs to module views. Components used across modules live under `src/shared`.
 
+## Dashboard module
+
+`src/modules/dashboard` provides the home page at `/`. It summarizes active applications, scheduled interviews, saved opportunities, opportunity alignment, and recurring undocumented skills. The dashboard reads `/api/dashboard`, an MSW summary composed from the current Profile, Opportunities, and Applications mock stores. Opportunity ranking uses explicit profile evidence across confirmed job criteria; recurring gaps appear when the same undocumented skill occurs in at least two confirmed opportunities. The former view index remains available at `/modules` for review.
+
 ## Job Opportunities module
 
 `src/modules/job-opportunities` contains the opportunity list, job capture, requirement review, and opportunity detail views. Users paste a description and optional URL, then review and edit the extracted details and criteria before confirming. The detail view keeps the original description, confirmed requirements, profile match analysis, and notes together. Apply opens the original posting; users can then create an application record to track their progress. Archived roles can be restored.
@@ -38,4 +42,4 @@ npm install
 npm run dev
 ```
 
-Open the local URL and use the root page to explore the modules. Run `npm run build` and `npm run lint` to check the app.
+Open the local URL for the dashboard, or `/modules` to browse all views. Run `npm run build` and `npm run lint` to check the app.

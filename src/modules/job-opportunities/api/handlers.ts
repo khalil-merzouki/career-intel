@@ -298,6 +298,10 @@ function getMockOpportunity(id: string) {
   return opportunities.find((item) => item.id === id)
 }
 
+export function getMockOpportunities() {
+  return opportunities
+}
+
 export function getApplicationSource(id: string) {
   return getMockOpportunity(id)
 }

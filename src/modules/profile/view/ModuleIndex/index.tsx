@@ -4,6 +4,11 @@ import { ArrowRight, Layers3 } from 'lucide-react'
 
 const links = [
   {
+    label: 'Dashboard',
+    path: '/',
+    note: 'Home and job search summary',
+  },
+  {
     label: 'Applications',
     path: '/applications',
     note: 'Track stages, interviews, dates, and notes',

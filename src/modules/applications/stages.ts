@@ -15,10 +15,10 @@ export const applicationStages: {
   { value: 'withdrawn', label: 'Withdrawn', active: false },
 ]
 
-export function stageLabel(stage: ApplicationStage) {
+export function stageLabel(stage: string) {
   return applicationStages.find((item) => item.value === stage)?.label ?? stage
 }
 
-export function isActiveStage(stage: ApplicationStage) {
+export function isActiveStage(stage: string) {
   return applicationStages.find((item) => item.value === stage)?.active ?? false
 }
