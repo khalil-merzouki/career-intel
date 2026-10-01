@@ -1,4 +1,8 @@
-import type { JobOpportunity, JobOpportunityInput } from '../types'
+import type {
+  JobOpportunity,
+  JobOpportunityInput,
+  MatchAnalysis,
+} from '../types'
 
 async function read<T>(response: Response): Promise<T> {
   if (!response.ok) {
@@ -15,6 +19,19 @@ export const jobApi = {
     fetch(`/api/jobs/${encodeURIComponent(id)}`).then((response) =>
       read<JobOpportunity>(response),
     ),
+  match: (id: string) =>
+    fetch(`/api/jobs/${encodeURIComponent(id)}/match`).then((response) =>
+      read<MatchAnalysis>(response),
+    ),
+  save: (opportunity: JobOpportunity) =>
+    fetch(`/api/jobs/${encodeURIComponent(opportunity.id)}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        notes: opportunity.notes,
+        trackingStatus: opportunity.trackingStatus,
+      }),
+    }).then((response) => read<JobOpportunity>(response)),
   analyze: (input: JobOpportunityInput) =>
     fetch('/api/jobs/analyze', {
       method: 'POST',

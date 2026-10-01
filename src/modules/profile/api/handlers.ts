@@ -41,6 +41,10 @@ function storeProfile(next: Profile) {
 
 let profile = loadProfile()
 
+export function getMockProfile() {
+  return profile
+}
+
 export const profileHandlers = [
   http.get('/api/profile', () => HttpResponse.json(profile)),
   http.post('/api/profile/reset', () => {

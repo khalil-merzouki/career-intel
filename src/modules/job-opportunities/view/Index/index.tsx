@@ -71,10 +71,16 @@ export function JobOpportunitiesView() {
                         .join(' · ') || 'Job details not provided'}
                     </p>
                   </div>
-                  <span className={`job-status ${opportunity.status}`}>
-                    {opportunity.status === 'confirmed'
-                      ? 'Confirmed'
-                      : 'Needs review'}
+                  <span
+                    className={`job-status ${opportunity.status === 'draft' && opportunity.trackingStatus === 'saved' ? 'draft' : opportunity.trackingStatus}`}
+                  >
+                    {opportunity.trackingStatus === 'archived'
+                      ? 'Archived'
+                      : opportunity.trackingStatus === 'applied'
+                        ? 'Applied'
+                        : opportunity.status === 'confirmed'
+                          ? 'Confirmed'
+                          : 'Needs review'}
                   </span>
                 </div>
                 {opportunity.salary && (
@@ -85,12 +91,16 @@ export function JobOpportunitiesView() {
                     {opportunity.requirements.length} extracted requirements
                   </span>
                   <Link
-                    to="/jobs/$jobId/review"
+                    to={
+                      opportunity.status === 'confirmed'
+                        ? '/jobs/$jobId'
+                        : '/jobs/$jobId/review'
+                    }
                     params={{ jobId: opportunity.id }}
                     className="edit-link"
                   >
                     {opportunity.status === 'confirmed'
-                      ? 'View analysis'
+                      ? 'View opportunity'
                       : 'Review analysis'}{' '}
                     <ArrowRight size={15} />
                   </Link>
