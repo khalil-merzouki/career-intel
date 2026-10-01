@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root {
+  --palette-f1f0ef: #f1f0ef;
+  --palette-a7c2ad: #a7c2ad;
+  --palette-153c2c: #153c2c;
+  --palette-aac7b5: #aac7b5;
+  --palette-66708a: #66708a;
+  --palette-1d7656: #1d7656;
+  --palette-9098ab: #9098ab;
+  --palette-e1e4ed: #e1e4ed;
+  --palette-e6b6b7: #e6b6b7;
+  --palette-212c40: #212c40;
+  --palette-fffefa: #fffefa;
+  --palette-e5e6e7: #e5e6e7;
+  --palette-1d6a4f: #1d6a4f;
+  --palette-dfedbc: #dfedbc;
+  --palette-f0f1f3: #f0f1f3;
+  --palette-11543d: #11543d;
+  --palette-a52b2b: #a52b2b;
+  --palette-962828: #962828;
+  --palette-e8e8e8: #e8e8e8;
+  --palette-d1d4e2: #d1d4e2;
+  --palette-dfe1e8: #dfe1e8;
+  --palette-fbfaf7: #fbfaf7;
+  --palette-d9dbe6: #d9dbe6;
+  --palette-606985: #606985;
+  --palette-6f9634: #6f9634;
+  --palette-4d5577: #4d5577;
+  --palette-f1f8f3: #f1f8f3;
+  --palette-273050: #273050;
+  --palette-edf3d8: #edf3d8;
+  --palette-fff1f0: #fff1f0;
+  --palette-6a7289: #6a7289;
+  --palette-707b94: #707b94;
+  --palette-f8e6e3: #f8e6e3;
+  --palette-e8e9ee: #e8e9ee;
+  --palette-4c5876: #4c5876;
+  --palette-e1e3e9: #e1e3e9;
+  --palette-176b4e: #176b4e;
+  --palette-263050: #263050;
+  --palette-fff0f0: #fff0f0;
+  --palette-20274b: #20274b;
+  --palette-dcdfe6: #dcdfe6;
+  --palette-768097: #768097;
+  --palette-21304a: #21304a;
+  --palette-cfd3e0: #cfd3e0;
+  --palette-6e7890: #6e7890;
+  --palette-287a5c: #287a5c;
+  --palette-b33737: #b33737;
+  --palette-e1f0e6: #e1f0e6;
+  --palette-4da982: #4da982;
+  --palette-8aaa98: #8aaa98;
+  --palette-e9f2ec: #e9f2ec;
+  --palette-e3f0e7: #e3f0e7;
+  --palette-6d7795: #6d7795;
+  --palette-4d5876: #4d5876;
+  --palette-33966f: #33966f;
+  --palette-5c647e: #5c647e;
+  --palette-1d254d: #1d254d;
+  --palette-f5faf6: #f5faf6;
+  --palette-1b2442: #1b2442;
+  --palette-172923: #172923;
+  --palette-a9c8b5: #a9c8b5;
+  --palette-e7f2eb: #e7f2eb;
+  --palette-a8c6b2: #a8c6b2;
+  --palette-e7e8e9: #e7e8e9;
+  --palette-68718a: #68718a;
+  --palette-ecf1d4: #ecf1d4;
+  --palette-a82935: #a82935;
+  --palette-fff: #fff;
+  --palette-rgba-20-94-68-0-12: rgba(20, 94, 68, 0.12);
+  --palette-rgba-255-254-250-0-97: rgba(255, 254, 250, 0.97);
+  --palette-rgba-31-37-82-0-07: rgba(31, 37, 82, 0.07);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--palette-172923);
+  background: var(--palette-fbfaf7);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: Manrope, 'DM Sans', sans-serif;
+}
+h1 {
+  font-size: clamp(2.35rem, 4vw, 4.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+h2 {
+  font-size: 1.13rem;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  margin-bottom: 6px;
+}
+h3 {
+  font-size: 0.98rem;
+  margin-bottom: 6px;
+}
+p {
+  line-height: 1.55;
+}
+:focus-visible {
+  outline: 3px solid var(--palette-287a5c);
+  outline-offset: 3px;
+}
