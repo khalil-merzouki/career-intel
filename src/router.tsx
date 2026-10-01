@@ -19,6 +19,7 @@ import { EditView } from './modules/profile/view/Edit'
 import { JobOpportunitiesView } from './modules/job-opportunities/view/Index'
 import { JobCaptureView } from './modules/job-opportunities/view/Capture'
 import { JobReviewView } from './modules/job-opportunities/view/Review'
+import { JobDetailView } from './modules/job-opportunities/view/Detail'
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -42,6 +43,7 @@ const routes = [
   ['/profile/edit', EditView],
   ['/jobs', JobOpportunitiesView],
   ['/jobs/new', JobCaptureView],
+  ['/jobs/$jobId', JobDetailView],
   ['/jobs/$jobId/review', JobReviewView],
 ] as const
 

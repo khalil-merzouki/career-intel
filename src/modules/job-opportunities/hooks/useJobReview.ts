@@ -107,7 +107,7 @@ export function useJobReview(jobId: string) {
     setError('')
     try {
       await jobApi.confirm(opportunity)
-      await navigate({ to: '/jobs' })
+      await navigate({ to: '/jobs/$jobId', params: { jobId: opportunity.id } })
     } catch (issue) {
       setError((issue as Error).message)
     } finally {

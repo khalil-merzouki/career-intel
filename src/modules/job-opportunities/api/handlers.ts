@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw'
+import type { Profile } from '../../../shared/types/profile'
 import type {
   JobOpportunity,
   JobOpportunityInput,
@@ -7,6 +8,7 @@ import type {
   RequirementPriority,
 } from '../types'
 import { validateJobCapture } from '../utils/validation'
+import { compareOpportunity } from './matchAnalysis'
 
 const storageKey = 'career-intel-job-opportunities'
 let opportunities = loadOpportunities()
@@ -14,7 +16,13 @@ let opportunities = loadOpportunities()
 function loadOpportunities(): JobOpportunity[] {
   try {
     const saved = localStorage.getItem(storageKey)
-    return saved ? (JSON.parse(saved) as JobOpportunity[]) : []
+    return saved
+      ? (JSON.parse(saved) as JobOpportunity[]).map((item) => ({
+          ...item,
+          notes: item.notes ?? '',
+          trackingStatus: item.trackingStatus ?? 'saved',
+        }))
+      : []
   } catch {
     return []
   }
@@ -280,8 +288,28 @@ function analyze(input: JobOpportunityInput): JobOpportunity {
     ...details,
     requirements: extractRequirements(input),
     status: 'draft',
+    trackingStatus: 'saved',
+    notes: '',
     createdAt: new Date().toISOString(),
   }
+}
+
+function getMockOpportunity(id: string) {
+  return opportunities.find((item) => item.id === id)
+}
+
+export function createJobMatchHandlers(getProfile: () => Profile) {
+  return [
+    http.get('/api/jobs/:jobId/match', ({ params }) => {
+      const opportunity = getMockOpportunity(String(params.jobId))
+      return opportunity
+        ? HttpResponse.json(compareOpportunity(opportunity, getProfile()))
+        : HttpResponse.json(
+            { message: 'Job opportunity not found.' },
+            { status: 404 },
+          )
+    }),
+  ]
 }
 
 export const jobHandlers = [
@@ -325,5 +353,35 @@ export const jobHandlers = [
     next[existingIndex] = confirmed
     storeOpportunities(next)
     return HttpResponse.json(confirmed)
+  }),
+  http.put('/api/jobs/:jobId', async ({ params, request }) => {
+    const index = opportunities.findIndex((item) => item.id === params.jobId)
+    if (index < 0) {
+      return HttpResponse.json(
+        { message: 'Job opportunity not found.' },
+        { status: 404 },
+      )
+    }
+    const input = (await request.json()) as Pick<
+      JobOpportunity,
+      'notes' | 'trackingStatus'
+    >
+    if (
+      !['saved', 'applied', 'archived'].includes(input.trackingStatus) ||
+      typeof input.notes !== 'string'
+    ) {
+      return HttpResponse.json(
+        { message: 'Invalid opportunity update.' },
+        { status: 400 },
+      )
+    }
+    const next = [...opportunities]
+    next[index] = {
+      ...next[index],
+      notes: input.notes,
+      trackingStatus: input.trackingStatus,
+    }
+    storeOpportunities(next)
+    return HttpResponse.json(next[index])
   }),
 ]

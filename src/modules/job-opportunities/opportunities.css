@@ -81,6 +81,15 @@
   background: var(--palette-e7f2eb);
   color: var(--palette-11543d);
 }
+.job-status.saved,
+.job-status.applied {
+  background: var(--palette-e7f2eb);
+  color: var(--palette-11543d);
+}
+.job-status.archived {
+  background: var(--palette-f0f1f3);
+  color: var(--palette-4c5876);
+}
 .job-salary {
   margin-top: 12px;
   font-size: 0.9rem;

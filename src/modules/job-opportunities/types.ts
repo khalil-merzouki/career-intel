@@ -4,6 +4,7 @@ export type RequirementPriority = 'required' | 'preferred'
 export type OpportunityStatus = 'draft' | 'confirmed'
 export type WorkType = 'remote' | 'hybrid' | 'on-site' | 'unknown'
 export type SalarySource = 'listed' | 'estimated'
+export type TrackingStatus = 'saved' | 'applied' | 'archived'
 
 export interface JobRequirement {
   id: string
@@ -26,10 +27,30 @@ export interface JobOpportunity {
   experience: string
   requirements: JobRequirement[]
   status: OpportunityStatus
+  trackingStatus: TrackingStatus
+  notes: string
   createdAt: string
 }
 
 export interface JobOpportunityInput {
   url: string
   description: string
+}
+
+export interface MatchFinding {
+  id: string
+  title: string
+  priority?: RequirementPriority
+  category: string
+  explanation: string
+  jobEvidence: string
+  profileEvidence: string
+}
+
+export interface MatchAnalysis {
+  state: 'ready' | 'profile-incomplete' | 'job-unconfirmed'
+  strongMatches: MatchFinding[]
+  partialMatches: MatchFinding[]
+  missingSkills: MatchFinding[]
+  eligibilityGaps: MatchFinding[]
 }

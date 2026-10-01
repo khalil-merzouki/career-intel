@@ -4,7 +4,9 @@ A Vite and React application organised as a modular monolith. Each functional ar
 
 ## Job Opportunities module
 
-`src/modules/job-opportunities` contains the opportunity list, job capture, and requirement review views. Users paste a description and optional URL, then review and edit the extracted details and criteria before confirming. Original descriptions and confirmed opportunities persist in browser local storage through MSW. The mock extraction uses keyword and phrase rules; its salary range suggestions are illustrative and marked as estimates. A backend can replace these handlers through the module API client.
+`src/modules/job-opportunities` contains the opportunity list, job capture, requirement review, and opportunity detail views. Users paste a description and optional URL, then review and edit the extracted details and criteria before confirming. The detail view keeps the original description, confirmed requirements, profile match analysis, notes, and application tracking together. Notes and tracking status persist through MSW. Apply opens the original posting; users mark the role as applied after submitting. Archived roles can be restored.
+
+`GET /api/jobs/:jobId/match` compares a confirmed opportunity with the saved Career Profile. Findings include the confirmed job criterion and the matching profile entry, or clearly say when profile evidence is absent. Experience duration counts overlapping dated roles once. Work authorization and other constraints remain for user review when preferences cannot prove eligibility. The mock extraction and comparison use deterministic rules, and salary suggestions are illustrative estimates. A backend can replace these handlers through the module API client.
 
 Reusable page shell, form field, aside illustration, and review components are in `src/shared/components` and are also used by Profile.
 
@@ -16,7 +18,7 @@ Reusable page shell, form field, aside illustration, and review components are i
 - `components/` contains UI shared by Profile views.
 - `hooks/` contains profile state, context, and reusable business logic.
 - `view/` contains the profile overview, onboarding steps, CV review, preferences, edit, and the root view used for user testing. Each view has its own `index.tsx` and `styles.css`.
-- `types.ts` contains the module's TypeScript models.
+- `types.ts` re-exports shared Profile models from `src/shared/types/profile.ts` for use by the comparison module.
 - `profile.css` contains the module's shared visual rules. Colors come from variables in `src/styles/globals.css`.
 
 `src/router.tsx` is the single route map.
