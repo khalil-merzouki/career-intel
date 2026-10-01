@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react'
-import type { Profile } from './types'
+import type { Profile } from '../types'
 
 export interface ProfileContextValue {
   profile: Profile | null

@@ -1,4 +1,4 @@
-import type { Profile } from './types'
+import type { Profile } from '../types'
 
 async function read<T>(response: Response): Promise<T> {
   if (!response.ok) {

@@ -1,7 +1,8 @@
+import './styles.css'
 import { FileUp, PencilLine, ShieldCheck } from 'lucide-react'
 import { Link } from '@tanstack/react-router'
-import { StepLayout, ProfileCharacter } from '../components'
-import { useProfile } from '../profileContext'
+import { StepLayout, ProfileCharacter } from '../../components/components'
+import { useProfile } from '../../hooks/profileContext'
 import { useNavigate } from '@tanstack/react-router'
 
 export function StartView() {

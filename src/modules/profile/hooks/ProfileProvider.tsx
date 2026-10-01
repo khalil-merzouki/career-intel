@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react'
-import { profileApi } from './api'
-import type { Profile } from './types'
+import { profileApi } from '../api/profileApi'
+import type { Profile } from '../types'
 import { ProfileContext } from './profileContext'
 
 export function ProfileProvider({ children }: { children: ReactNode }) {

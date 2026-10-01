@@ -4,18 +4,18 @@ import {
   createRouter,
   Outlet,
 } from '@tanstack/react-router'
-import { RootPage } from './RootPage'
-import { ProfileProvider } from './modules/profile/ProfileProvider'
-import { ProfilePage } from './modules/profile'
-import { StartView } from './modules/profile/views/StartView'
-import { UploadView } from './modules/profile/views/UploadView'
-import { ImportReviewView } from './modules/profile/views/ImportReviewView'
-import { ExperienceView } from './modules/profile/views/ExperienceView'
-import { SkillsView } from './modules/profile/views/SkillsView'
-import { QualificationsView } from './modules/profile/views/QualificationsView'
-import { PreferencesView } from './modules/profile/views/PreferencesView'
-import { FinalReviewView } from './modules/profile/views/FinalReviewView'
-import { EditView } from './modules/profile/views/EditView'
+import { RootPage } from './modules/profile/view/ModuleIndex'
+import { ProfileProvider } from './modules/profile/hooks/ProfileProvider'
+import { ProfilePage } from './modules/profile/view/Profile'
+import { StartView } from './modules/profile/view/Start'
+import { UploadView } from './modules/profile/view/Upload'
+import { ImportReviewView } from './modules/profile/view/ImportReview'
+import { ExperienceView } from './modules/profile/view/Experience'
+import { SkillsView } from './modules/profile/view/Skills'
+import { QualificationsView } from './modules/profile/view/Qualifications'
+import { PreferencesView } from './modules/profile/view/Preferences'
+import { FinalReviewView } from './modules/profile/view/FinalReview'
+import { EditView } from './modules/profile/view/Edit'
 
 const rootRoute = createRootRoute({
   component: () => (

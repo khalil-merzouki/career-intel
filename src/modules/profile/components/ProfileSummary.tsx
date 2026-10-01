@@ -9,7 +9,7 @@ import {
   Wrench,
 } from 'lucide-react'
 import { ReviewRow } from './components'
-import type { Profile } from './types'
+import type { Profile } from '../types'
 
 export function ProfileSummary({
   profile,

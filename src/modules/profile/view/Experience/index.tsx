@@ -1,10 +1,11 @@
+import './styles.css'
 import { useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import { BriefcaseBusiness, Plus, Trash2 } from 'lucide-react'
-import { Field, InfoAside, StepLayout } from '../components'
-import { ExperiencePeriodField } from '../ExperiencePeriodField'
-import { validateExperiencePeriod } from '../datePeriod'
-import { useProfile } from '../profileContext'
+import { Field, InfoAside, StepLayout } from '../../components/components'
+import { ExperiencePeriodField } from '../../components/ExperiencePeriodField'
+import { validateExperiencePeriod } from '../../hooks/datePeriod'
+import { useProfile } from '../../hooks/profileContext'
 
 export function ExperienceView() {
   const { profile, update, save } = useProfile()

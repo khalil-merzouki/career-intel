@@ -1,5 +1,5 @@
 import { useId, useRef, useState, type ChangeEvent } from 'react'
-import { splitPeriod, validateExperiencePeriod } from './datePeriod'
+import { splitPeriod, validateExperiencePeriod } from '../hooks/datePeriod'
 
 function formatMonthYear(raw: string, previous: string, inputType?: string) {
   const digits = raw.replace(/\D/g, '').slice(0, 6)
