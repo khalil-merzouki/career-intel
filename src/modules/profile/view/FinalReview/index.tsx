@@ -1,8 +1,9 @@
+import './styles.css'
 import { useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
-import { InfoAside, StepLayout } from '../components'
-import { ProfileSummary } from '../ProfileSummary'
-import { useProfile } from '../profileContext'
+import { InfoAside, StepLayout } from '../../components/components'
+import { ProfileSummary } from '../../components/ProfileSummary'
+import { useProfile } from '../../hooks/profileContext'
 
 export function FinalReviewView() {
   const { profile, save } = useProfile()

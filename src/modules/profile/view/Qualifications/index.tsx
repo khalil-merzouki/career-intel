@@ -1,8 +1,9 @@
+import './styles.css'
 import { useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import { Plus, Trash2 } from 'lucide-react'
-import { Field, InfoAside, StepLayout } from '../components'
-import { useProfile } from '../profileContext'
+import { Field, InfoAside, StepLayout } from '../../components/components'
+import { useProfile } from '../../hooks/profileContext'
 
 export function QualificationsView() {
   const { profile, update, save } = useProfile()

@@ -1,8 +1,9 @@
+import './styles.css'
 import { useRef, useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import { FileText, UploadCloud } from 'lucide-react'
-import { HelpText, InfoAside, StepLayout } from '../components'
-import { useProfile } from '../profileContext'
+import { HelpText, InfoAside, StepLayout } from '../../components/components'
+import { useProfile } from '../../hooks/profileContext'
 
 export function UploadView() {
   const input = useRef<HTMLInputElement>(null)

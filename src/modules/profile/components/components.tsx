@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight, Check, CircleHelp } from 'lucide-react'
 import { Link } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
-import { useProfile } from './profileContext'
+import { useProfile } from '../hooks/profileContext'
 
 export function StepLayout({
   step,
@@ -154,18 +154,18 @@ export function ProfileCharacter({
       role="img"
       aria-label="A friendly geometric character"
     >
-      <circle cx="127" cy="119" r="98" fill="#f1f0ef" />
-      <circle cx="207" cy="38" r="7" fill="#6f9634" />
-      <circle cx="237" cy="88" r="4" fill="#1d7656" />
+      <circle cx="127" cy="119" r="98" fill="var(--palette-f1f0ef)" />
+      <circle cx="207" cy="38" r="7" fill="var(--palette-6f9634)" />
+      <circle cx="237" cy="88" r="4" fill="var(--palette-1d7656)" />
       <path
         d="M40 67c55-63 159-56 191 19"
         fill="none"
-        stroke="#a7c2ad"
+        stroke="var(--palette-a7c2ad)"
         strokeDasharray="4 7"
       />
       <path
         d="M83 189L124 52c4-13 22-13 26 0l42 137c3 11-5 20-16 20H99c-11 0-19-9-16-20Z"
-        fill="#1d7656"
+        fill="var(--palette-1d7656)"
       />
       <circle cx="124" cy="143" r="4" fill="white" />
       <circle cx="150" cy="143" r="4" fill="white" />
@@ -178,7 +178,7 @@ export function ProfileCharacter({
       />
       <path
         d="M99 207l-11 23M172 207l13 23M89 163l-24-14M185 163l21-17"
-        stroke="#153c2c"
+        stroke="var(--palette-153c2c)"
         strokeWidth="5"
         strokeLinecap="round"
       />
@@ -191,20 +191,20 @@ export function ProfileCharacter({
             height="69"
             rx="5"
             fill="white"
-            stroke="#aac7b5"
+            stroke="var(--palette-aac7b5)"
             strokeWidth="3"
           />
           <path
             d="M198 101h31M198 112h31M198 123h23"
-            stroke="#aac7b5"
+            stroke="var(--palette-aac7b5)"
             strokeWidth="3"
             strokeLinecap="round"
           />
         </g>
       ) : (
         <>
-          <circle cx="219" cy="113" r="17" fill="#6f9634" />
-          <circle cx="219" cy="113" r="7" fill="#1d7656" />
+          <circle cx="219" cy="113" r="17" fill="var(--palette-6f9634)" />
+          <circle cx="219" cy="113" r="7" fill="var(--palette-1d7656)" />
         </>
       )}
     </svg>

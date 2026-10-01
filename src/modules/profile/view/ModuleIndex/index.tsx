@@ -1,3 +1,4 @@
+import './styles.css'
 import { Link } from '@tanstack/react-router'
 import { ArrowRight, Layers3 } from 'lucide-react'
 

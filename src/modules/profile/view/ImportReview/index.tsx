@@ -1,3 +1,4 @@
+import './styles.css'
 import {
   Award,
   BriefcaseBusiness,
@@ -7,8 +8,8 @@ import {
   Wrench,
 } from 'lucide-react'
 import { useNavigate } from '@tanstack/react-router'
-import { InfoAside, ReviewRow, StepLayout } from '../components'
-import { useProfile } from '../profileContext'
+import { InfoAside, ReviewRow, StepLayout } from '../../components/components'
+import { useProfile } from '../../hooks/profileContext'
 
 export function ImportReviewView() {
   const { profile } = useProfile()

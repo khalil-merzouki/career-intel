@@ -1,9 +1,10 @@
+import './styles.css'
 import { useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import { Plus, Trash2 } from 'lucide-react'
-import { InfoAside, StepLayout } from '../components'
-import { useProfile } from '../profileContext'
-import type { Proficiency } from '../types'
+import { InfoAside, StepLayout } from '../../components/components'
+import { useProfile } from '../../hooks/profileContext'
+import type { Proficiency } from '../../types'
 
 const levels: Proficiency[] = ['Beginner', 'Intermediate', 'Advanced', 'Expert']
 
