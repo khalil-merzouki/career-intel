@@ -2,17 +2,11 @@
 
 A Vite and React application organised as a modular monolith. Each functional area owns its views, types, API client, and MSW handlers under `src/modules`. The root router maps URLs to module views. Components used across modules live under `src/shared`.
 
-<<<<<<< HEAD
-## Dashboard module
-
-`src/modules/dashboard` provides the home page at `/`. It summarizes active applications, scheduled interviews, saved opportunities, opportunity alignment, and recurring undocumented skills. The dashboard reads `/api/dashboard`, an MSW summary composed from the current Profile, Opportunities, and Applications mock stores. Opportunity ranking uses explicit profile evidence across confirmed job criteria; recurring gaps appear when the same undocumented skill occurs in at least two confirmed opportunities. The former view index remains available at `/modules` for review.
-=======
 ## License
 
 Career Intel is licensed under the [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0). Commercial use is not permitted under this license. If you redistribute this software, including a modified version or a project containing any part of it, include the license and preserve the required attribution notice in `LICENSE` so users can identify Career Intel and its author. This is source-available software, not OSI-approved open source. Third-party dependencies remain under their own licenses.
 
 The repository previously used MIT. Changing the license does not revoke permissions already granted for copies distributed under MIT.
->>>>>>> origin/feature/0-enable-mocks-by-env
 
 ## Job Opportunities module
 
@@ -50,10 +44,6 @@ npm install
 npm run dev
 ```
 
-<<<<<<< HEAD
-Open the local URL for the dashboard, or `/modules` to browse all views. Run `npm run build` and `npm run lint` to check the app.
-=======
 Start `../career-intel-server` first. Vite proxies `/api` to `http://127.0.0.1:3000` by default. Set `VITE_API_PROXY_TARGET` to use another API address, or `VITE_USE_MOCKS=true` to run with browser mocks.
 
 Open the local URL and use the root page to explore the modules. Run `npm run build` and `npm run lint` to check the app.
->>>>>>> origin/feature/0-enable-mocks-by-env
