@@ -10,6 +10,10 @@ import type {
 const storageKey = 'career-intel-applications'
 let applications = loadApplications()
 
+export function getMockApplications() {
+  return applications
+}
+
 function loadApplications(): Application[] {
   try {
     const saved = localStorage.getItem(storageKey)

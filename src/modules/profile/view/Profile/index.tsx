@@ -1,6 +1,6 @@
 import './styles.css'
 import { Link } from '@tanstack/react-router'
-import { ArrowRight, Pencil, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Pencil, Sparkles } from 'lucide-react'
 import { ProfileCharacter } from '../../components/components'
 import { useProfile } from '../../hooks/profileContext'
 import { ProfileSummary } from '../../components/ProfileSummary'
@@ -12,6 +12,9 @@ export function ProfilePage() {
     return (
       <main className="profile-empty">
         <div>
+          <Link to="/" className="back-link">
+            <ArrowLeft size={17} /> Back to dashboard
+          </Link>
           <p className="eyebrow">YOUR PROFILE</p>
           <h1>Your next chapter starts here.</h1>
           <p className="lead">
@@ -28,6 +31,9 @@ export function ProfilePage() {
 
   return (
     <main className="profile-page">
+      <Link to="/" className="back-link">
+        <ArrowLeft size={17} /> Back to dashboard
+      </Link>
       <div className="profile-page-head">
         <div>
           <p className="eyebrow">YOUR PROFILE</p>

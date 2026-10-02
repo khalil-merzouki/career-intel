@@ -5,6 +5,7 @@ import {
   Outlet,
 } from '@tanstack/react-router'
 import { RootPage } from './modules/profile/view/ModuleIndex'
+import { DashboardView } from './modules/dashboard/view'
 import { ProfileProvider } from './modules/profile/hooks/ProfileProvider'
 import { ProfilePage } from './modules/profile/view/Profile'
 import { StartView } from './modules/profile/view/Start'
@@ -33,7 +34,8 @@ const rootRoute = createRootRoute({
 })
 
 const routes = [
-  ['/', RootPage],
+  ['/', DashboardView],
+  ['/modules', RootPage],
   ['/profile', ProfilePage],
   ['/profile/setup', StartView],
   ['/profile/setup/upload', UploadView],
