@@ -2,6 +2,12 @@
 
 A Vite and React application organised as a modular monolith. Each functional area owns its views, types, API client, and MSW handlers under `src/modules`. The root router maps URLs to module views. Components used across modules live under `src/shared`.
 
+## License
+
+Career Intel is licensed under the [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0). Commercial use is not permitted under this license. If you redistribute this software, including a modified version or a project containing any part of it, include the license and preserve the required attribution notice in `LICENSE` so users can identify Career Intel and its author. This is source-available software, not OSI-approved open source. Third-party dependencies remain under their own licenses.
+
+The repository previously used MIT. Changing the license does not revoke permissions already granted for copies distributed under MIT.
+
 ## Job Opportunities module
 
 `src/modules/job-opportunities` contains the opportunity list, job capture, requirement review, and opportunity detail views. Users paste a description and optional URL, then review and edit the extracted details and criteria before confirming. The detail view keeps the original description, confirmed requirements, profile match analysis, and notes together. Apply opens the original posting; users can then create an application record to track their progress. Archived roles can be restored.
