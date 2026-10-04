@@ -31,8 +31,8 @@ export function UploadView() {
       setValidation('Use a PDF or DOCX file.')
       return
     }
-    if (candidate.size > 10 * 1024 * 1024) {
-      setValidation('Choose a file smaller than 10 MB.')
+    if (candidate.size > 5 * 1024 * 1024) {
+      setValidation('Choose a file smaller than 5 MB.')
       return
     }
     setValidation('')
@@ -76,7 +76,7 @@ export function UploadView() {
           {file ? <FileText size={32} /> : <UploadCloud size={34} />}
         </span>
         <h2>{file ? file.name : 'Drop your CV here'}</h2>
-        <p>{file ? 'Ready to import' : 'PDF or DOCX, up to 10 MB'}</p>
+        <p>{file ? 'Ready to import' : 'PDF or DOCX, up to 5 MB'}</p>
         <button
           type="button"
           className="button button-quiet"
@@ -91,8 +91,8 @@ export function UploadView() {
         </p>
       )}
       <HelpText>
-        The import is a mock for this UI prototype. It returns sample extracted
-        details for review.
+        Your CV text is sent to our AI extraction service to prepare a draft.
+        Review the extracted details before saving your profile.
       </HelpText>
     </StepLayout>
   )

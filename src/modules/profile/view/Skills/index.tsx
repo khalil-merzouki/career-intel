@@ -6,7 +6,7 @@ import { InfoAside, StepLayout } from '../../components/components'
 import { useProfile } from '../../hooks/profileContext'
 import type { Proficiency } from '../../types'
 
-const levels: Proficiency[] = ['Beginner', 'Intermediate', 'Advanced', 'Expert']
+const levels: Proficiency[] = ['Unspecified', 'Beginner', 'Intermediate', 'Advanced', 'Expert']
 
 export function SkillsView() {
   const { profile, update, save } = useProfile()
