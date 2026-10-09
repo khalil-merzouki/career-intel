@@ -2,6 +2,7 @@ import type {
   JobOpportunity,
   JobOpportunityInput,
   MatchAnalysis,
+  RecruiterMatch,
 } from '../types'
 
 async function read<T>(response: Response): Promise<T> {
@@ -23,6 +24,8 @@ export const jobApi = {
     fetch(`/api/jobs/${encodeURIComponent(id)}/match`).then((response) =>
       read<MatchAnalysis>(response),
     ),
+  evaluateMatch: (id: string) =>
+    fetch(`/api/jobs/${encodeURIComponent(id)}/evaluate-match`, { method: 'POST' }).then((response) => read<RecruiterMatch>(response)),
   save: (opportunity: JobOpportunity) =>
     fetch(`/api/jobs/${encodeURIComponent(opportunity.id)}`, {
       method: 'PUT',

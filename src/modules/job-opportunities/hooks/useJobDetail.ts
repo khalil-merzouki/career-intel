@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { jobApi } from '../api/jobApi'
-import type { JobOpportunity, MatchAnalysis, TrackingStatus } from '../types'
+import type { JobOpportunity, MatchAnalysis, RecruiterMatch, TrackingStatus } from '../types'
 import { isValidJobUrl } from '../utils/validation'
 
 export function useJobDetail(jobId: string) {
   const [opportunity, setOpportunity] = useState<JobOpportunity | null>(null)
   const [analysis, setAnalysis] = useState<MatchAnalysis | null>(null)
+  const [recruiterMatch, setRecruiterMatch] = useState<RecruiterMatch | null>(null)
+  const [evaluating, setEvaluating] = useState(false)
   const [notes, setNotes] = useState('')
   const [loading, setLoading] = useState(true)
   const [busy, setBusy] = useState(false)
@@ -15,6 +17,7 @@ export function useJobDetail(jobId: string) {
   useEffect(() => {
     let active = true
     setLoading(true)
+    setRecruiterMatch(null)
     Promise.all([jobApi.get(jobId), jobApi.match(jobId)])
       .then(([job, match]) => {
         if (!active) return
@@ -61,8 +64,24 @@ export function useJobDetail(jobId: string) {
     }
   }
 
+  async function evaluateMatch() {
+    if (!opportunity || evaluating) return
+    setEvaluating(true)
+    setError('')
+    try {
+      setRecruiterMatch(await jobApi.evaluateMatch(opportunity.id))
+    } catch (issue) {
+      setError((issue as Error).message)
+    } finally {
+      setEvaluating(false)
+    }
+  }
+
   return {
     opportunity,
+    recruiterMatch,
+    evaluating,
+    evaluateMatch,
     analysis,
     notes,
     setNotes,

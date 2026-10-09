@@ -283,6 +283,24 @@ export function JobDetailView() {
                 </div>
               </div>
               {job.analysis && <MatchAnalysis analysis={job.analysis} />}
+              <div className="recruiter-match">
+                <h3>Recruiter review</h3>
+                <p>Check your documented required skills first. If coverage is above 65%, an AI recruiter will review your saved profile and this job description.</p>
+                <button type="button" className="button button-primary" onClick={() => void job.evaluateMatch()} disabled={job.evaluating || opportunity.status !== 'confirmed'}>
+                  {job.evaluating ? 'Evaluating…' : 'Evaluate candidate fit'}
+                </button>
+                {job.recruiterMatch && (
+                  <div className="recruiter-match-result" role="status">
+                    <strong>Required skill coverage: {job.recruiterMatch.score === null ? 'Unavailable' : `${job.recruiterMatch.score}%`}</strong>
+                    <p>{job.recruiterMatch.summary}</p>
+                    {job.recruiterMatch.stage === 'recruiter-reviewed' && (
+                      <p><strong>Interview recommendation: {job.recruiterMatch.recommendInterview ? 'Invite' : 'Do not invite'}</strong></p>
+                    )}
+                    {job.recruiterMatch.matchedSkills.length > 0 && <p>Matched: {job.recruiterMatch.matchedSkills.join(', ')}</p>}
+                    {job.recruiterMatch.missingSkills.length > 0 && <p>Missing evidence: {job.recruiterMatch.missingSkills.join(', ')}</p>}
+                  </div>
+                )}
+              </div>
             </section>
 
             <section
