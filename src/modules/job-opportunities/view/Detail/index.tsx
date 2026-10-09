@@ -20,6 +20,7 @@ const categoryNames: Record<JobRequirement['category'], string> = {
   skill: 'Skills',
   language: 'Languages',
   certification: 'Certifications',
+  education: 'Education',
   location: 'Location',
   work: 'Work constraints',
 }

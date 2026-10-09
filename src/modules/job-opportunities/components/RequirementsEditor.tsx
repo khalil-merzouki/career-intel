@@ -21,6 +21,11 @@ const sections: {
     description: 'Languages requested for the role.',
   },
   {
+    category: 'education',
+    title: 'Education',
+    description: 'Degrees or education requested for the role.',
+  },
+  {
     category: 'certification',
     title: 'Certifications',
     description: 'Credentials or certificates mentioned.',

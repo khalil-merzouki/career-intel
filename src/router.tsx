@@ -24,6 +24,7 @@ import { JobDetailView } from './modules/job-opportunities/view/Detail'
 import { ApplicationsView } from './modules/applications/view/Index'
 import { ConvertApplicationView } from './modules/applications/view/Convert'
 import { ApplicationDetailView } from './modules/applications/view/Detail'
+import { InsightsView } from './modules/insights/view'
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -53,6 +54,7 @@ const routes = [
   ['/applications', ApplicationsView],
   ['/applications/new/$jobId', ConvertApplicationView],
   ['/applications/$applicationId', ApplicationDetailView],
+  ['/insights', InsightsView],
 ] as const
 
 const routeTree = rootRoute.addChildren(

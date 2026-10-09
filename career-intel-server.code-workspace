@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "../career-intel-server"
+	},
+	{
+		"path": "../career-intel-ai"
+	},
+	{
+		"path": "."
+	}
+],
+  "settings": {}
+}

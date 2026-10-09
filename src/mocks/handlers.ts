@@ -16,6 +16,7 @@ import {
 } from '../modules/applications/api/handlers'
 import { isActiveStage, stageLabel } from '../modules/applications/stages'
 import { createDashboardHandlers } from '../modules/dashboard/api/handlers'
+import { createInsightsHandlers } from '../modules/insights/api/handlers'
 
 export const handlers = [
   ...profileHandlers,
@@ -32,5 +33,10 @@ export const handlers = [
       const job = getMockOpportunities().find((item) => item.id === jobId)
       return job ? compareOpportunity(job, getMockProfile()) : null
     },
+  ),
+  ...createInsightsHandlers(
+    getMockProfile,
+    getMockOpportunities,
+    getMockApplications,
   ),
 ]

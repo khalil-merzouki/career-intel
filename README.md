@@ -35,7 +35,7 @@ Reusable page shell, form field, aside illustration, and review components are i
 
 The manual setup path is: start → experience → skills → education and credentials → preferences → final review → profile. The CV path is: start → upload → review imported details → preferences → final review → profile. Edit links lead back to the relevant Profile view.
 
-The module API client calls `/api/profile` and `/api/profile/import`. The NestJS API extracts PDF and DOCX text and fills only an explicitly labeled role; users review and complete their profile. MSW handlers remain available for isolated UI demos with `VITE_USE_MOCKS=true`.
+The module API client calls `/api/profile` and `/api/profile/import`. The NestJS API extracts PDF and DOCX text and sends it to the private AI service for structured profile extraction; users review and complete their profile. MSW handlers remain available for isolated UI demos with `VITE_USE_MOCKS=true`.
 
 ## Run locally
 

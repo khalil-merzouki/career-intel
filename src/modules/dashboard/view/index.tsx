@@ -36,6 +36,9 @@ export function DashboardView() {
         <Link to="/applications">
           Applications <ArrowUpRight size={15} />
         </Link>
+        <Link to="/insights">
+          Career insights <ArrowUpRight size={15} />
+        </Link>
       </nav>
       {loading ? (
         <p className="dashboard-loading" role="status">

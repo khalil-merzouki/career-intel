@@ -14,6 +14,11 @@ const links = [
     note: 'Track stages, interviews, dates, and notes',
   },
   {
+    label: 'Career insights',
+    path: '/insights',
+    note: 'Skill demand and development priorities',
+  },
+  {
     label: 'Job opportunities',
     path: '/jobs',
     note: 'Capture and review target roles',
